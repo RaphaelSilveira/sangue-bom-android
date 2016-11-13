@@ -13,10 +13,11 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 import br.com.bom.sangue.sangue_bom_android.R;
-//import br.com.jansenfelipe.androidmask.MaskEditTextChangedListener;
 
 public class AdministratorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +75,5 @@ public class AdministratorActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void insertMasks () {
-        EditText cpf = (EditText) findViewById(R.id.input_cpf);
-
-        //MaskEditTextChangedListener maskCpf = new MaskEditTextChangedListener("###.###.###-##", cpf);
-
-        //cpf.addTextChangedListener(maskCpf);
     }
 }
