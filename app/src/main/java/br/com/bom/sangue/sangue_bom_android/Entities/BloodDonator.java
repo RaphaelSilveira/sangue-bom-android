@@ -3,7 +3,7 @@ package br.com.bom.sangue.sangue_bom_android.Entities;
 /**
  * Created by Raphael on 13/11/2016.
  */
-public class BloodDonator {
+public class BloodDonator extends User {
 
     private String bloodType;
     private String bloodFactor;

@@ -11,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.github.pinball83.maskededittext.MaskedEditText;
 
 import br.com.bom.sangue.sangue_bom_android.R;
 
@@ -83,5 +87,26 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void ridingObject () {
+
+        EditText cpf = (EditText) findViewById(R.id.input_cpf);
+        EditText nickname = (EditText) findViewById(R.id.input_nickname);
+        Spinner bloodType = (Spinner) findViewById(R.id.input_blood_type);
+        Spinner bloodFactor = (Spinner) findViewById(R.id.input_blood_factor);
+        EditText name = (EditText) findViewById(R.id.input_name);
+        EditText email = (EditText) findViewById(R.id.input_email);
+        EditText birthDate = (EditText) findViewById(R.id.input_birth_date);
+        EditText cellphone = (EditText) findViewById(R.id.input_cellphone);
+        EditText telephone = (EditText) findViewById(R.id.input_telephone);
+        EditText street = (EditText) findViewById(R.id.input_street);
+        EditText number = (EditText) findViewById(R.id.input_number);
+        EditText neighborhood = (EditText) findViewById(R.id.input_neighborhood);
+        EditText cep = (EditText) findViewById(R.id.input_cep);
+        EditText complement = (EditText) findViewById(R.id.input_complement);
+        EditText city = (EditText) findViewById(R.id.input_city);
+        Spinner state = (Spinner) findViewById(R.id.input_state);
+
     }
 }
