@@ -14,13 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class HomeActivity extends AppCompatActivity
+public class AdministratorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_administrator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.administrator, menu);
         return true;
     }
 
@@ -57,12 +57,16 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.donators_ranking) {
+        if (id == R.id.intent_donations) {
+            // Handle the camera action
+        } else if (id == R.id.intent_maps) {
 
-        } else if (id == R.id.news) {
+        } else if (id == R.id.write_news) {
 
-        } else if (id == R.id.login) {
-            Intent intent = new Intent(this, AdministratorActivity.class);
+        } else if (id == R.id.administrators) {
+
+        } else if (id == R.id.logout) {
+            Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         }
 

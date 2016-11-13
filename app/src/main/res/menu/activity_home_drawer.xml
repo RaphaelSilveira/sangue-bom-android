@@ -3,11 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_hearth"
+            android:id="@+id/donators_ranking"
+            android:icon="@drawable/ic_heart"
             android:title="Ranking de doadores" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/news"
             android:icon="@drawable/ic_news"
             android:title="Notícias" />
     </group>
@@ -15,7 +15,7 @@
     <item android:title="Administração">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/login"
                 android:icon="@drawable/ic_person"
                 android:title="Login" />
         </menu>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/intent_donations"
+            android:icon="@drawable/ic_heart"
+            android:title="Intenções de doação" />
+        <item
+            android:id="@+id/intent_maps"
+            android:icon="@drawable/ic_map"
+            android:title="Mapa de intenções" />
+        <item
+            android:id="@+id/write_news"
+            android:icon="@drawable/ic_write_news"
+            android:title="Escrever notícia" />
+    </group>
+
+    <item android:title="Outras ações">
+        <menu>
+            <item
+                android:id="@+id/administrators"
+                android:icon="@drawable/ic_administrator"
+                android:title="Administradores" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
