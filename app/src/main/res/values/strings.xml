@@ -5,4 +5,49 @@
     <string name="navigation_drawer_close">Fechar menu</string>
 
     <string name="title_activity_administrator">Administração</string>
+
+    <string name="insert_blood_type">Tipo sanguíneo</string>
+    <string name="insert_blood_factor">Fator sanguíneo</string>
+
+    <string-array name="blood_types">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="blood_factor">
+        <item>+</item>
+        <item>-</item>
+    </string-array>
+
+    <string-array name="states">
+        <item>SP</item>
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SE</item>
+        <item>TO</item>
+    </string-array>
 </resources>

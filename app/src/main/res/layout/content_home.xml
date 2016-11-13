@@ -9,7 +9,7 @@
     android:paddingRight="5dp"
     android:paddingTop="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="br.com.bom.sangue.sangue_bom_android.HomeActivity"
+    tools:context=".Activitys.HomeActivity"
     android:orientation="vertical"
     tools:showIn="@layout/app_bar_home">
 
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp">
 
-                <EditText
+                <com.github.pinball83.maskededittext.MaskedEditText
                     android:id="@+id/input_cpf"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -36,7 +36,11 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="CPF" />
+                    android:hint="CPF"
+                    android:inputType="number"
+                    app:mask="***.***.***-**"
+                    app:notMaskedSymbol="*"
+                    />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -65,7 +69,7 @@
                 android:layout_below="@id/input_layout_cpf"
                 android:layout_margin="5dp">
 
-                <EditText
+                <Spinner
                     android:id="@+id/input_blood_type"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -74,7 +78,9 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Tipo sanguíneo" />
+                    android:prompt="@string/insert_blood_type"
+                    android:entries="@array/blood_types"></Spinner>
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -85,7 +91,7 @@
                 android:layout_below="@id/input_layout_nickname"
                 android:layout_margin="5dp">
 
-                <EditText
+                <Spinner
                     android:id="@+id/input_blood_factor"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -94,7 +100,9 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Fator sanguíneo" />
+                    android:prompt="@string/insert_blood_factor"
+                    android:entries="@array/blood_factor"></Spinner>
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -142,7 +150,7 @@
                 android:layout_below="@id/input_layout_email"
                 android:layout_margin="5dp">
 
-                <EditText
+                <com.github.pinball83.maskededittext.MaskedEditText
                     android:id="@+id/input_birth_date"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
@@ -151,7 +159,11 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Data de nascimento" />
+                    android:hint="Data de nascimento"
+                    android:inputType="number"
+                    app:mask="**/**/****"
+                    app:notMaskedSymbol="*"
+                    />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -161,7 +173,7 @@
                 android:layout_below="@id/input_layout_birth_date"
                 android:layout_margin="5dp">
 
-                <EditText
+                <com.github.pinball83.maskededittext.MaskedEditText
                     android:id="@+id/input_cellphone"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -170,7 +182,12 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Celular" />
+                    android:hint="Celular"
+                    android:inputType="number"
+                    app:mask="(**) *****-****"
+                    app:notMaskedSymbol="*"
+                    />
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -181,7 +198,7 @@
                 android:layout_below="@id/input_layout_birth_date"
                 android:layout_margin="5dp">
 
-                <EditText
+                <com.github.pinball83.maskededittext.MaskedEditText
                     android:id="@+id/input_telephone"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -190,7 +207,11 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Telefone" />
+                    android:hint="Telefone"
+                    android:inputType="number"
+                    app:mask="(**) ****-****"
+                    app:notMaskedSymbol="*"
+                    />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -228,6 +249,7 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
+                    android:inputType="number"
                     android:hint="Número" />
             </android.support.design.widget.TextInputLayout>
 
@@ -297,7 +319,8 @@
                 android:layout_toRightOf="@id/input_layout_city"
                 android:layout_margin="5dp">
 
-                <EditText
+
+                <Spinner
                     android:id="@+id/input_state"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
@@ -306,7 +329,8 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textSize="14dp"
-                    android:hint="Estado" />
+                    android:entries="@array/states"></Spinner>
+
             </android.support.design.widget.TextInputLayout>
 
         </RelativeLayout>
