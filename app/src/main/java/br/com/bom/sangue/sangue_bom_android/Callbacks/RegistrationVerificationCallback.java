@@ -6,4 +6,6 @@ package br.com.bom.sangue.sangue_bom_android.Callbacks;
 public interface RegistrationVerificationCallback {
 
     void RegistrationVerificationCall();
+
+    void verifyRegistrationBloodDonatorCall();
 }
