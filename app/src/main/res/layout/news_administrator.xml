@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activitys.AdministratorActivity"
+    android:orientation="vertical"
+    tools:showIn="@layout/app_bar_administrator">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+        <EditText
+            android:id="@+id/input_titulo"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="20dp"
+            android:hint="Titulo"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="46dp"
+            android:layout_weight="0.22" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_layout_titulo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="335dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="33dp"
+            android:inputType="textMultiLine"
+            android:hint="Text"
+            android:ems="10"
+            android:lines="6"
+            android:textSize="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/input_layout_text"
+            android:layout_centerHorizontal="true" />
+    </android.support.design.widget.TextInputLayout>
+</RelativeLayout>
