@@ -9,6 +9,12 @@
     <string name="insert_blood_type">Tipo sanguíneo</string>
     <string name="insert_blood_factor">Fator sanguíneo</string>
 
+    <string name="presentation_text">
+        O Sangue Bom veio para facilitar a vida de quem quer ser doador.\n
+        Basta fazer um cadastro rápido e aguardar o retorno de um de membro de nossa equipe.\n
+        É fácil. É rapido. É prático.
+    </string>
+
     <string-array name="blood_types">
         <item>A</item>
         <item>B</item>

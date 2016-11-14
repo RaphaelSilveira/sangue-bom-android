@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity
 
     private void ridingObject () {
 
-        EditText cpf = (EditText) findViewById(R.id.input_cpf);
+        /*EditText cpf = (EditText) findViewById(R.id.input_cpf);
         EditText nickname = (EditText) findViewById(R.id.input_nickname);
         Spinner bloodType = (Spinner) findViewById(R.id.input_blood_type);
         Spinner bloodFactor = (Spinner) findViewById(R.id.input_blood_factor);
@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity
         EditText cep = (EditText) findViewById(R.id.input_cep);
         EditText complement = (EditText) findViewById(R.id.input_complement);
         EditText city = (EditText) findViewById(R.id.input_city);
-        Spinner state = (Spinner) findViewById(R.id.input_state);
+        Spinner state = (Spinner) findViewById(R.id.input_state);*/
 
     }
 }
