@@ -12,4 +12,34 @@
     tools:context="br.com.bom.sangue.sangue_bom_android.Activitys.RegistrationVerificationActivity"
     tools:showIn="@layout/activity_registration_verification">
 
+    <TextView
+        android:id="@+id/registration_verification_text"
+        android:layout_below="@id/logo_view"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:text="@string/registration_verification_text"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_cpf"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@id/registration_verification_text"
+        android:layout_centerHorizontal="true">
+
+        <com.github.pinball83.maskededittext.MaskedEditText
+            android:id="@+id/input_cpf"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="14dp"
+            android:inputType="number"
+            app:mask="***.***.***-**"
+            app:notMaskedSymbol="*"
+            />
+    </android.support.design.widget.TextInputLayout>
+
 </RelativeLayout>

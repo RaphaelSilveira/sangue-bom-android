@@ -15,6 +15,11 @@
         É fácil. É rapido. É prático.
     </string>
 
+    <string name="registration_verification_text">
+        Por favor, <b>insira seu CPF.</b>\n
+        Usaremos ele para verificar se você já é um doador sangue bom.
+    </string>
+
     <string-array name="blood_types">
         <item>A</item>
         <item>B</item>

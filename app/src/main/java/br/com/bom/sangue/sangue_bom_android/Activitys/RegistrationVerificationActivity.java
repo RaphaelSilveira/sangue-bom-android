@@ -10,9 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.github.pinball83.maskededittext.MaskedEditText;
+
 import br.com.bom.sangue.sangue_bom_android.R;
+import br.com.bom.sangue.sangue_bom_android.Services.RegistrationVerificationService;
 
 public class RegistrationVerificationActivity extends AppCompatActivity {
+
+    RegistrationVerificationService registrationVerificationService = new RegistrationVerificationService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,7 @@ public class RegistrationVerificationActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.next_registration_verification:
 
-                //TODO
+
 
                 return true;
 
@@ -46,5 +51,10 @@ public class RegistrationVerificationActivity extends AppCompatActivity {
         }
     }
 
+    private String getValuesInForm () {
+        MaskedEditText maskedEditTextCpf = (MaskedEditText) findViewById(R.id.input_cpf);
+
+        return maskedEditTextCpf.getUnmaskedText();
+    }
 
 }
