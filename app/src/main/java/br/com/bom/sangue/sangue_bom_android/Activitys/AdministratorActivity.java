@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import br.com.bom.sangue.sangue_bom_android.Entities.News;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 public class AdministratorActivity extends AppCompatActivity
@@ -64,6 +65,8 @@ public class AdministratorActivity extends AppCompatActivity
         } else if (id == R.id.intent_maps) {
 
         } else if (id == R.id.write_news) {
+            Intent intent = new Intent(this, NewsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.administrators) {
 

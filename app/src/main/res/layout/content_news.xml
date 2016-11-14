@@ -9,9 +9,9 @@
     android:paddingRight="5dp"
     android:paddingTop="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Activitys.AdministratorActivity"
+    tools:context=".Activitys.NewsActivity"
     android:orientation="vertical"
-    tools:showIn="@layout/app_bar_administrator">
+    tools:showIn="@layout/app_bar_news">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_titulo"
@@ -39,24 +39,27 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/input_layout_titulo"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_height="350dp">
         <EditText
             android:id="@+id/input_text"
-            android:layout_width="335dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="33dp"
             android:inputType="textMultiLine"
+            android:layout_width="335dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="33dp"
             android:hint="Text"
             android:ems="10"
-            android:lines="6"
+            android:lines="8"
+            android:minLines="6"
+            android:gravity="top|left"
+            android:maxLines="10"
+            android:scrollbars="vertical"
             android:textSize="20dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:layout_below="@+id/input_layout_text"
             android:layout_centerHorizontal="true" />
     </android.support.design.widget.TextInputLayout>
 </RelativeLayout>
