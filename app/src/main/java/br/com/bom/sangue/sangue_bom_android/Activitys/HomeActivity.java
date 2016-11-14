@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -36,6 +38,14 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        final Button button = (Button) findViewById(R.id.want_be_donor);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openRegistrationVerification();
+            }
+        });
     }
 
     @Override
@@ -45,27 +55,6 @@ public class HomeActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-
-        switch(item.getItemId()){
-            case R.id.save_intent_donation:
-
-                //TODO
-
-                return true;
-
-            default: return super.onOptionsItemSelected(item);
         }
     }
 
@@ -89,24 +78,8 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
-    private void ridingObject () {
-
-        /*EditText cpf = (EditText) findViewById(R.id.input_cpf);
-        EditText nickname = (EditText) findViewById(R.id.input_nickname);
-        Spinner bloodType = (Spinner) findViewById(R.id.input_blood_type);
-        Spinner bloodFactor = (Spinner) findViewById(R.id.input_blood_factor);
-        EditText name = (EditText) findViewById(R.id.input_name);
-        EditText email = (EditText) findViewById(R.id.input_email);
-        EditText birthDate = (EditText) findViewById(R.id.input_birth_date);
-        EditText cellphone = (EditText) findViewById(R.id.input_cellphone);
-        EditText telephone = (EditText) findViewById(R.id.input_telephone);
-        EditText street = (EditText) findViewById(R.id.input_street);
-        EditText number = (EditText) findViewById(R.id.input_number);
-        EditText neighborhood = (EditText) findViewById(R.id.input_neighborhood);
-        EditText cep = (EditText) findViewById(R.id.input_cep);
-        EditText complement = (EditText) findViewById(R.id.input_complement);
-        EditText city = (EditText) findViewById(R.id.input_city);
-        Spinner state = (Spinner) findViewById(R.id.input_state);*/
-
+    private final void openRegistrationVerification () {
+        Intent intent = new Intent(this, RegistrationVerificationActivity.class);
+        startActivity(intent);
     }
 }
