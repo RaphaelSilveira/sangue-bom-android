@@ -2,15 +2,12 @@ package br.com.bom.sangue.sangue_bom_android.Entities;
 
 import java.util.Date;
 
-/**
- * Created by paulo on 14/11/16.
- */
 
 public class News {
     private Long id;
     private String title;
     private String text;
-    private Date createdAt;
+    private String createdAt;
     private Administrator administrator;
 
     public Long getId() {
@@ -34,10 +31,11 @@ public class News {
         this.text = text;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(Date createdAt) {
+
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

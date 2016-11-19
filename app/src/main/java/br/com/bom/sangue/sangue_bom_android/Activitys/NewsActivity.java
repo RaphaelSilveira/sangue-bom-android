@@ -1,9 +1,6 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,7 +10,6 @@ import android.widget.EditText;
 
 import org.json.JSONException;
 
-import java.text.DateFormat;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -68,16 +64,14 @@ public class NewsActivity extends AppCompatActivity {
         Administrator administrator = new Administrator();
         News news = new News();
         long id = 2;
-        Date currentDate = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String createdAt = dateFormat.format(currentDate);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         EditText title = (EditText) findViewById(R.id.input_titulo);
         EditText text = (EditText) findViewById(R.id.input_text);
 
         news.setTitle(title.getText().toString());
         news.setText(text.getText().toString());
-        news.setCreatedAt(currentDate);
+        news.setCreatedAt(simpleDateFormat.format(new Date()));
 
         administrator.setId(id);
         news.setAdministrator(administrator);
