@@ -9,10 +9,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.List;
 
 import br.com.bom.sangue.sangue_bom_android.Adapters.RankingDonationAdapter;
+import br.com.bom.sangue.sangue_bom_android.Callbacks.RankingDonationsCallback;
 import br.com.bom.sangue.sangue_bom_android.Entities.BloodDonator;
+import br.com.bom.sangue.sangue_bom_android.Entities.RankingDonations;
+import br.com.bom.sangue.sangue_bom_android.Providers.RankingDonationsProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 public class RankingDonationsActivity extends AppCompatActivity {
@@ -21,21 +28,39 @@ public class RankingDonationsActivity extends AppCompatActivity {
 
     private RankingDonationAdapter rankingDonationAdapter;
 
+    private RankingDonationsProvider rankingDonationsProvider = new RankingDonationsProvider();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking_donations);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        RankingDonationsCallback rankingDonationsCallback = new RankingDonationsCallback() {
+            @Override
+            public void getRankingDonationsCallback(String response) {
+                transformObject(response);
+            }
+        };
+
+        rankingDonationsProvider.getRankingDonations(this, rankingDonationsCallback);
     }
 
-    private void loadingList (List<BloodDonator> bloodDonators) {
+    private void transformObject (String object) {
+        Type listType = new TypeToken<List<RankingDonations>>(){}.getType();
+        List<RankingDonations> rankingDonationses = new Gson().fromJson(object, listType);
+
+        loadingList(rankingDonationses);
+    }
+
+    private void loadingList (List<RankingDonations> rankingDonationses) {
         recyclerView = (RecyclerView) findViewById(R.id.ranking_donations);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        rankingDonationAdapter = new RankingDonationAdapter(bloodDonators, this);
+        rankingDonationAdapter = new RankingDonationAdapter(rankingDonationses, this);
         recyclerView.setAdapter(rankingDonationAdapter);
         rankingDonationAdapter.notifyDataSetChanged();
     }
