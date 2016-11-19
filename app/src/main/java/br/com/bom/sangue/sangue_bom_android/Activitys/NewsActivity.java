@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import java.text.ParseException;
+
 import br.com.bom.sangue.sangue_bom_android.R;
 
 public class NewsActivity extends AppCompatActivity {
@@ -29,5 +31,9 @@ public class NewsActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.news, menu);
         return true;
+    }
+
+    private void mountObject () throws ParseException {
+
     }
 }

@@ -65,6 +65,7 @@
     <string name="title_activity_registration_verification">Já possui cadastro?</string>
 
     <string name="title_activity_news">Escrever noticia</string>
+
     <string name="title_activity_intent_donation">Finalize seu cadastro</string>
     <string name="title_activity_ranking_donations">RankingDonationsActivity</string>
 </resources>
