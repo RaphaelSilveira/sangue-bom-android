@@ -13,26 +13,26 @@
     tools:showIn="@layout/activity_success">
 
     <TextView
-        android:id="@+id/presentation_text"
+        android:id="@+id/success_text"
         android:layout_below="@id/logo_view"
         android:layout_centerHorizontal="true"
         android:layout_width="300dp"
         android:layout_height="120dp"
         android:gravity="center"
         android:textSize="14dp"
-        android:text="@string/presentation_text"/>
+        android:text="@string/success_text"/>
 
     <Button
         android:layout_marginTop="20dp"
-        android:id="@+id/want_be_donor"
+        android:id="@+id/back_home"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_below="@id/presentation_text"
+        android:layout_below="@id/success_text"
         android:layout_centerHorizontal="true"
         android:textSize="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:text="Quero ser doador"
+        android:text="Voltar para o inicio"
         android:background="@drawable/roundcorner"
         android:textColor="@color/textButton" />
 

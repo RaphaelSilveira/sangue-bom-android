@@ -15,6 +15,11 @@
         É fácil. É rapido. É prático.
     </string>
 
+    <string name="success_text">
+        <b>Parabéns!</b>\n
+        Você finalizou com sucesso a sua intenção de doação. Basta aguardar o contato de um de nossos administradores.
+    </string>
+
     <string name="registration_verification_text">
         Por favor, <b>insira seu CPF.</b>\n
         Usaremos ele para verificar se você já é um doador sangue bom.

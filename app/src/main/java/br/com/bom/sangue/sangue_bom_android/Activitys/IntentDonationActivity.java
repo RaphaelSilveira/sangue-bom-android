@@ -149,11 +149,16 @@ public class IntentDonationActivity extends AppCompatActivity {
         IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
             @Override
             public void create() {
-
+                openSuccess();
             }
         };
 
         intentDonationProvider.create(intentDonation, this, intentDonationCallback);
+    }
+
+    private void openSuccess () {
+        Intent intent = new Intent(this, SuccessActivity.class);
+        startActivity(intent);
     }
 
 }
