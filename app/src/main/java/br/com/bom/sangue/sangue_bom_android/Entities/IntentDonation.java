@@ -8,7 +8,7 @@ import java.util.Date;
 public class IntentDonation {
 
     private Long id;
-    private Date createdAt;
+    private String createdAt;
     /* Status: 0 - canceled, 1 - to-do, 2 - done*/
     private int status;
     private Date grantDate;
@@ -21,10 +21,10 @@ public class IntentDonation {
         this.id = id;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

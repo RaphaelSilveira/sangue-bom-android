@@ -53,6 +53,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.RegistrationVerificationActivity" />
         </activity>
+        <activity
+            android:name=".Activitys.RankingDonationsActivity"
+            android:label="@string/title_activity_ranking_donations"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -10,7 +10,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
-    private Date birthDate;
+    private String birthDate;
     private Address address;
     private Telephone telephone;
 
@@ -35,10 +35,10 @@ public class User {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

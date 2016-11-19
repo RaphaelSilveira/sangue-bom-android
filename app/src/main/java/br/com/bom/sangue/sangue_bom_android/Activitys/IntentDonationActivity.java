@@ -16,19 +16,24 @@ import android.widget.Spinner;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 
+import org.json.JSONException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.bom.sangue.sangue_bom_android.Callbacks.BloodDonatorCallback;
+import br.com.bom.sangue.sangue_bom_android.Callbacks.IntentDonationCallback;
 import br.com.bom.sangue.sangue_bom_android.Entities.Address;
 import br.com.bom.sangue.sangue_bom_android.Entities.BloodDonator;
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.Telephone;
 import br.com.bom.sangue.sangue_bom_android.Providers.BloodDonatorProvider;
+import br.com.bom.sangue.sangue_bom_android.Providers.IntentDonationProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 public class IntentDonationActivity extends AppCompatActivity {
+    IntentDonationProvider intentDonationProvider = new IntentDonationProvider();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +57,17 @@ public class IntentDonationActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
 
         switch(item.getItemId()){
             case R.id.save_intent_donation:
-
+                try {
+                    mountObject();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
 
@@ -69,7 +80,7 @@ public class IntentDonationActivity extends AppCompatActivity {
         cpfFiel.setMaskedText(cpf);
     }
 
-    private void mountObject () throws ParseException {
+    private void mountObject () throws ParseException, JSONException {
         BloodDonator bloodDonator = new BloodDonator();
         Telephone telephone = new Telephone();
         Address address = new Address();
@@ -102,7 +113,8 @@ public class IntentDonationActivity extends AppCompatActivity {
         String originalDate = birthDate.getText().toString();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = simpleDateFormat.parse(originalDate);
-        bloodDonator.setBirthDate(date);
+        simpleDateFormat.applyPattern("yyyy-MM-dd");
+        bloodDonator.setBirthDate(simpleDateFormat.format(date));
 
         String phone = telephoneField.getUnmaskedText().toString();
         String dd = phone.substring(0, 1);
@@ -124,8 +136,24 @@ public class IntentDonationActivity extends AppCompatActivity {
         bloodDonator.setAddress(address);
 
         intentDonation.setBloodDonator(bloodDonator);
+        intentDonation.setStatus(1);
 
+        SimpleDateFormat simpleDateFormatIntent = new SimpleDateFormat("yyyy-MM-dd");
+        Date dateIntent = new Date();
+        intentDonation.setCreatedAt(simpleDateFormatIntent.format(dateIntent));
 
+        createIntentDonation(intentDonation);
+    }
+
+    private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
+        IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
+            @Override
+            public void create() {
+
+            }
+        };
+
+        intentDonationProvider.create(intentDonation, this, intentDonationCallback);
     }
 
 }
