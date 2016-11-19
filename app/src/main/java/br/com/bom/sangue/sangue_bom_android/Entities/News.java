@@ -11,6 +11,7 @@ public class News {
     private String title;
     private String text;
     private Date createdAt;
+    private Administrator administrator;
 
     public Long getId() {
         return id;
@@ -38,5 +39,13 @@ public class News {
     }
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Administrator getAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(Administrator administrator) {
+        this.administrator = administrator;
     }
 }
