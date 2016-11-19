@@ -13,7 +13,10 @@ import android.widget.EditText;
 
 import org.json.JSONException;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import br.com.bom.sangue.sangue_bom_android.Callbacks.NewsCallback;
 import br.com.bom.sangue.sangue_bom_android.Entities.Administrator;
@@ -51,6 +54,8 @@ public class NewsActivity extends AppCompatActivity {
                     mountObject();
                 } catch (ParseException e) {
                     e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
                 return true;
@@ -59,22 +64,28 @@ public class NewsActivity extends AppCompatActivity {
         }
     }
 
-    private void mountObject () throws ParseException {
+    private void mountObject () throws ParseException, JSONException {
         Administrator administrator = new Administrator();
         News news = new News();
         long id = 2;
+        Date currentDate = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String createdAt = dateFormat.format(currentDate);
 
         EditText title = (EditText) findViewById(R.id.input_titulo);
         EditText text = (EditText) findViewById(R.id.input_text);
 
         news.setTitle(title.getText().toString());
         news.setText(text.getText().toString());
+        news.setCreatedAt(currentDate);
 
         administrator.setId(id);
         news.setAdministrator(administrator);
+
+        createNews(news);
     }
 
-    private void createNews (News news) throws JSONException {
+    private void createNews (News news) throws ParseException, JSONException {
         NewsCallback newsCallback = new NewsCallback() {
             @Override
             public void create() {
