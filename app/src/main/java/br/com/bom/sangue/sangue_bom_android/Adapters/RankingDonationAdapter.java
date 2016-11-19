@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.bom.sangue.sangue_bom_android.Entities.BloodDonator;
+import br.com.bom.sangue.sangue_bom_android.Entities.RankingDonations;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 /**
@@ -17,11 +18,11 @@ import br.com.bom.sangue.sangue_bom_android.R;
  */
 public class RankingDonationAdapter extends RecyclerView.Adapter<RankingDonationAdapter.RankingDonationViewHolder> {
 
-    private List<BloodDonator> bloodDonators;
+    private List<RankingDonations> rankingDonationses;
     private Context context;
 
-    public RankingDonationAdapter (List<BloodDonator> bloodDonators, Context context) {
-        this.bloodDonators = bloodDonators;
+    public RankingDonationAdapter (List<RankingDonations> rankingDonationses, Context context) {
+        this.rankingDonationses = rankingDonationses;
         this.context = context;
     }
 
@@ -33,21 +34,24 @@ public class RankingDonationAdapter extends RecyclerView.Adapter<RankingDonation
 
     @Override
     public void onBindViewHolder(RankingDonationViewHolder holder, int position) {
+        RankingDonations rankingDonations = rankingDonationses.get(position);
 
+        holder.bloodDonator.setText(rankingDonations.getBloodDonator());
+        holder.numberDonations.setText(rankingDonations.getNumberDonations());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return rankingDonationses.size();
     }
 
     public static class RankingDonationViewHolder extends RecyclerView.ViewHolder {
-        public TextView login, reposUrl;
+        public TextView bloodDonator, numberDonations;
 
         public RankingDonationViewHolder(View view) {
             super(view);
-            login = (TextView) view.findViewById(R.id.login);
-            //reposUrl = (TextView) view.findViewById(R.id.repos_url);
+            bloodDonator = (TextView) view.findViewById(R.id.blood_donator);
+            numberDonations = (TextView) view.findViewById(R.id.number_donations);
         }
     }
 }
