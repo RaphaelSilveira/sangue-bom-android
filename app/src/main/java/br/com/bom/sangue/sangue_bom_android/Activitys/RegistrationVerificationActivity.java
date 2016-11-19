@@ -6,18 +6,18 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 
+import br.com.bom.sangue.sangue_bom_android.Callbacks.BloodDonatorCallback;
+import br.com.bom.sangue.sangue_bom_android.Providers.BloodDonatorProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
-import br.com.bom.sangue.sangue_bom_android.Services.RegistrationVerificationService;
 
 public class RegistrationVerificationActivity extends AppCompatActivity {
-
-    RegistrationVerificationService registrationVerificationService = new RegistrationVerificationService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,16 @@ public class RegistrationVerificationActivity extends AppCompatActivity {
 
         switch(item.getItemId()){
             case R.id.next_registration_verification:
+                BloodDonatorProvider bloodDonatorProvider = new BloodDonatorProvider();
 
+                BloodDonatorCallback bloodDonatorCallback = new BloodDonatorCallback() {
+                    @Override
+                    public void findOneByCpfCallback() {
+                        Log.d("REGISTRATION_VERIFICATI","CHAMOU CALLBACK");
+                    }
+                };
 
+                bloodDonatorProvider.findOneByCpf(getValuesInForm(), this, bloodDonatorCallback);
 
                 return true;
 
