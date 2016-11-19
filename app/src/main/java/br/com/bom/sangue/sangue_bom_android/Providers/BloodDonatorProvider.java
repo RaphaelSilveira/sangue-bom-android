@@ -9,6 +9,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
@@ -21,7 +22,7 @@ import br.com.bom.sangue.sangue_bom_android.Entities.BloodDonator;
  */
 public class BloodDonatorProvider {
 
-    public BloodDonator findOneByCpf (String cpf, Context context, final BloodDonatorCallback bloodDonatorCallback) {
+    public void findOneByCpf (String cpf, Context context, final BloodDonatorCallback bloodDonatorCallback) {
         RequestQueue request = Volley.newRequestQueue(context);
 
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, Endpoints.BLOOD_DONATOR_FIND_ONE_BY_CPF + cpf, null,
@@ -30,7 +31,8 @@ public class BloodDonatorProvider {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("Response", response.toString());
-                        bloodDonatorCallback.findOneByCpfCallback();
+
+                        bloodDonatorCallback.findOneByCpfCallback(response.toString());
                     }
                 },
                 new Response.ErrorListener()
@@ -43,7 +45,5 @@ public class BloodDonatorProvider {
         );
 
         request.add(getRequest);
-
-        return null;
     }
 }

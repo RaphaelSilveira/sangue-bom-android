@@ -63,4 +63,5 @@
     </string-array>
 
     <string name="title_activity_registration_verification">Já possui cadastro?</string>
+    <string name="title_activity_intent_donation">Finalize seu cadastro</string>
 </resources>
