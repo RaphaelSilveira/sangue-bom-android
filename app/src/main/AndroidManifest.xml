@@ -39,7 +39,12 @@
         <activity
             android:name=".Activitys.IntentDonationActivity"
             android:label="@string/title_activity_intent_donation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".Activitys.RegistrationVerificationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.RegistrationVerificationActivity" />
+        </activity>
     </application>
 
 </manifest>
