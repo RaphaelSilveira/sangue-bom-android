@@ -10,4 +10,6 @@ public final class Endpoints {
     public static final String BLOOD_DONATOR_FIND_ONE_BY_CPF = ENDPOINT + "/blood-donator/find-by-cpf/";
 
     public static final String NEWS_CREATE = ENDPOINT + "/news";
+
+    public static final String INTENT_DONATION_CREATE = ENDPOINT + "/intent-donation";
 }
