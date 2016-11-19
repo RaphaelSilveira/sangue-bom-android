@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.bom.sangue.sangue_bom_android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -43,6 +43,11 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
+        </activity>
+        <activity
+            android:name=".Activitys.IntentDonationActivity"
+            android:label="@string/title_activity_intent_donation"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

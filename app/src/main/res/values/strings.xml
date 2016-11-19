@@ -64,5 +64,6 @@
 
     <string name="title_activity_registration_verification">Já possui cadastro?</string>
 
-    <string name="title_activity_news">Ecscrever noticia</string>s
+    <string name="title_activity_news">Ecscrever noticia</string>
+    <string name="title_activity_intent_donation">Finalize seu cadastro</string>
 </resources>
