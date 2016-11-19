@@ -26,7 +26,6 @@
             android:label="@string/title_activity_administrator"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activitys.NewsActivity" />
         <activity
             android:name=".Activitys.RegistrationVerificationActivity"
             android:label="@string/title_activity_registration_verification"
@@ -35,6 +34,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".Activitys.NewsActivity"
+            android:label="@string/title_activity_news"
+            android:parentActivityName=".Activitys.AdministratorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
         </activity>
         <activity
             android:name=".Activitys.IntentDonationActivity"
