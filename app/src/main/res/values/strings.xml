@@ -63,4 +63,6 @@
     </string-array>
 
     <string name="title_activity_registration_verification">Já possui cadastro?</string>
+
+    <string name="title_activity_news">Ecscrever noticia</string>s
 </resources>
