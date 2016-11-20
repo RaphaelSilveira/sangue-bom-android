@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.news) {
 
         } else if (id == R.id.login) {
-            Intent intent = new Intent(this, AdministratorActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
 

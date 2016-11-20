@@ -60,6 +60,10 @@
         <activity
             android:name=".Activitys.SuccessActivity"
             android:label="@string/title_activity_success"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activitys.LoginActivity"
+            android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

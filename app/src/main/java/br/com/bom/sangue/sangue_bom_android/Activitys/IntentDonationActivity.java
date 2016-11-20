@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 
@@ -78,6 +79,15 @@ public class IntentDonationActivity extends AppCompatActivity {
 
     private void verificationValues (String cpf, String bloodDonatoJson) {
         MaskedEditText cpfFiel = (MaskedEditText) findViewById(R.id.input_cpf);
+
+        Gson gson = new Gson();
+
+        BloodDonator bloodDonator = gson.fromJson(bloodDonatoJson, BloodDonator.class);
+
+        if (bloodDonator.getId() != null) {
+            Log.i("VERIFICAÇÃO", "Ja possui cadastro");
+        }
+
         cpfFiel.setMaskedText(cpf);
     }
 
