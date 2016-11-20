@@ -12,7 +12,9 @@ public final class Endpoints {
 
     public static final String NEWS_CREATE = ENDPOINT + "/news";
 
-    public static final String INTENT_DONATION_CREATE = ENDPOINT + "/intent-donation";
+    public static final String INTENT_DONATION_CREATE_DONATOR = ENDPOINT + "/intent-donation/create-donator";
 
     public static final String RANKING_DONATION_GET = ENDPOINT + "/ranking-donations";
+
+    public static final String LOGIN = ENDPOINT + "/administrator/login/";
 }

@@ -1,5 +1,6 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 
@@ -77,6 +79,15 @@ public class IntentDonationActivity extends AppCompatActivity {
 
     private void verificationValues (String cpf, String bloodDonatoJson) {
         MaskedEditText cpfFiel = (MaskedEditText) findViewById(R.id.input_cpf);
+
+        Gson gson = new Gson();
+
+        BloodDonator bloodDonator = gson.fromJson(bloodDonatoJson, BloodDonator.class);
+
+        if (bloodDonator.getId() != null) {
+            Log.i("VERIFICAÇÃO", "Ja possui cadastro");
+        }
+
         cpfFiel.setMaskedText(cpf);
     }
 
@@ -93,17 +104,14 @@ public class IntentDonationActivity extends AppCompatActivity {
         EditText name = (EditText) findViewById(R.id.input_name);
         EditText email = (EditText) findViewById(R.id.input_email);
         MaskedEditText birthDate = (MaskedEditText) findViewById(R.id.input_birth_date);
-        MaskedEditText cellphone = (MaskedEditText) findViewById(R.id.input_cellphone);
         MaskedEditText telephoneField = (MaskedEditText) findViewById(R.id.input_telephone);
         EditText street = (EditText) findViewById(R.id.input_street);
         EditText number = (EditText) findViewById(R.id.input_number);
-        EditText neighborhood = (EditText) findViewById(R.id.input_neighborhood);
+        Spinner neighborhood = (Spinner) findViewById(R.id.input_neighborhood);
         MaskedEditText cep = (MaskedEditText) findViewById(R.id.input_cep);
         EditText complement = (EditText) findViewById(R.id.input_complement);
-        EditText city = (EditText) findViewById(R.id.input_city);
-        Spinner state = (Spinner) findViewById(R.id.input_state);
 
-        bloodDonator.setCPF(cpf.getUnmaskedText());
+        bloodDonator.setCpf(cpf.getUnmaskedText());
         bloodDonator.setNickname(nickname.getText().toString());
         bloodDonator.setBloodType(bloodType.getSelectedItem().toString());
         bloodDonator.setBloodFactor(bloodFactor.getSelectedItem().toString());
@@ -118,20 +126,21 @@ public class IntentDonationActivity extends AppCompatActivity {
 
         String phone = telephoneField.getUnmaskedText().toString();
         String dd = phone.substring(0, 1);
-        String finalNumber = phone.substring(2, 9);;
+        String finalNumber = phone.substring(2);
         telephone.setDdi(55);
         telephone.setDdd(Integer.parseInt(dd));
         telephone.setNumber(finalNumber);
+        telephone.setType("telephone");
 
         bloodDonator.setTelephone(telephone);
 
         address.setStreet(street.getText().toString());
         address.setNumber(Integer.parseInt(number.getText().toString()));
-        address.setNeighborhood(neighborhood.getText().toString());
+        address.setNeighborhood(neighborhood.getSelectedItem().toString());
         address.setCep(cep.getUnmaskedText().toString());
         address.setComplement(complement.getText().toString());
-        address.setCity(city.getText().toString());
-        address.setState(state.getSelectedItem().toString());
+        address.setCity("São Carlos");
+        address.setState("SP");
 
         bloodDonator.setAddress(address);
 
@@ -146,9 +155,13 @@ public class IntentDonationActivity extends AppCompatActivity {
     }
 
     private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
+        final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Finalizando o seu cadastro...", true);
+        progressDialog.setCancelable(true);
+
         IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
             @Override
             public void create() {
+                progressDialog.dismiss();
                 openSuccess();
             }
         };

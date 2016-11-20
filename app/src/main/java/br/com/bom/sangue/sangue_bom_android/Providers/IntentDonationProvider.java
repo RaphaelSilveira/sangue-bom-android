@@ -34,12 +34,13 @@ public class IntentDonationProvider {
         String intentDonationJson = gson.toJson(intentDonation);
         JSONObject intentDonationObject = new JSONObject(intentDonationJson);
 
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.POST, Endpoints.INTENT_DONATION_CREATE, intentDonationObject,
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.POST, Endpoints.INTENT_DONATION_CREATE_DONATOR, intentDonationObject,
             new Response.Listener<JSONObject>()
             {
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.d("Response", response.toString());
+                    intentDonationCallback.create();
                 }
             },
             new Response.ErrorListener()

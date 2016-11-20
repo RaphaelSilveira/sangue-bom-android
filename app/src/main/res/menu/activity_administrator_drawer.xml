@@ -19,10 +19,6 @@
     <item android:title="Outras ações">
         <menu>
             <item
-                android:id="@+id/administrators"
-                android:icon="@drawable/ic_administrator"
-                android:title="Administradores" />
-            <item
                 android:id="@+id/logout"
                 android:icon="@drawable/ic_logout"
                 android:title="Logout" />
