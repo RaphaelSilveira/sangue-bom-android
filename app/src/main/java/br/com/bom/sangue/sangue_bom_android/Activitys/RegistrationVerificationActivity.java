@@ -1,5 +1,6 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -47,9 +48,13 @@ public class RegistrationVerificationActivity extends AppCompatActivity {
             case R.id.next_registration_verification:
                 BloodDonatorProvider bloodDonatorProvider = new BloodDonatorProvider();
 
+                final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Verificando o seu CPF...", true);
+                progressDialog.setCancelable(true);
+
                 BloodDonatorCallback bloodDonatorCallback = new BloodDonatorCallback() {
                     @Override
                     public void findOneByCpfCallback(String bloodDonator) {
+                        progressDialog.dismiss();
                         openIntentDonationActivity(bloodDonator, cpf);
                     }
                 };

@@ -1,5 +1,6 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -144,9 +145,13 @@ public class IntentDonationActivity extends AppCompatActivity {
     }
 
     private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
+        final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Finalizando o seu cadastro...", true);
+        progressDialog.setCancelable(true);
+
         IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
             @Override
             public void create() {
+                progressDialog.dismiss();
                 openSuccess();
             }
         };
