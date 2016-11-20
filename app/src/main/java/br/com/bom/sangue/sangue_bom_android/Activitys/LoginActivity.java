@@ -1,5 +1,6 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,12 +43,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login () {
 
+        final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Verificando sua senha...", true);
+        progressDialog.setCancelable(true);
+
         EditText email = (EditText) findViewById(R.id.input_email_login);
         EditText password = (EditText) findViewById(R.id.input_password);
 
         LoginCallback loginCallback = new LoginCallback() {
             @Override
             public void login(Boolean mayComeIn) {
+                progressDialog.dismiss();
                 if (mayComeIn) {
                     openAdministrator();
                 } else {
