@@ -24,7 +24,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_cpf"
-        android:layout_width="120dp"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_below="@id/registration_verification_text"
@@ -32,7 +32,7 @@
 
         <com.github.pinball83.maskededittext.MaskedEditText
             android:id="@+id/input_cpf"
-            android:layout_width="120dp"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textSize="14dp"

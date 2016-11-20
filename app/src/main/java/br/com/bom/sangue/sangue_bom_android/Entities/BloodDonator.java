@@ -7,7 +7,7 @@ public class BloodDonator extends User {
 
     private String bloodType;
     private String bloodFactor;
-    private String CPF;
+    private String cpf;
     private String nickname;
 
     public String getBloodType() {
@@ -24,11 +24,11 @@ public class BloodDonator extends User {
         this.bloodFactor = bloodFactor;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getNickname() {

@@ -12,7 +12,8 @@
     <string name="presentation_text">
         O Sangue Bom veio para facilitar a vida de quem quer ser doador.\n
         Basta fazer um cadastro rápido e aguardar o retorno de um de membro de nossa equipe.\n
-        É fácil. É rapido. É prático.
+        É fácil. É rapido. É prático.\n\n
+        Dísponível só para a cidade de São Carlos.
     </string>
 
     <string name="success_text">
@@ -67,11 +68,189 @@
         <item>TO</item>
     </string-array>
 
+    <string-array name="neighborhoods">
+        <item>Antenor Garcia</item>
+        <item>Aporá de São Fernando</item>
+        <item>Aracê de Santo Antonio</item>
+        <item>Arona "Vila Industrial"</item>
+        <item>Azulville</item>
+        <item>Bosque São Carlos</item>
+        <item>Botafogo</item>
+        <item>CEAT</item>
+        <item>Centro Comunitário</item>
+        <item>Chácara do Parque</item>
+        <item>Chácara Leila</item>
+        <item>Chácara Parcilio</item>
+        <item>Cidade Aracy</item>
+        <item>Cidade Jardim</item>
+        <item>Cidade Universitária</item>
+        <item>Condomínio Dom Bosco</item>
+        <item>Condomínio Oscar Barros</item>
+        <item>Condomínio Swiss Park</item>
+        <item>Conjunto Hab. Dom Constantino Amstalden (São Carlos VIII)</item>
+        <item>Dona Eugênia</item>
+        <item>Encontro Valparaíso I e II</item>
+        <item>Estância Balneária Concórdia (29)</item>
+        <item>Estância Recreio Santa Lúcia</item>
+        <item>Jardim Albertini</item>
+        <item>Jardim Alvorada</item>
+        <item>Jardim Bandeirantes</item>
+        <item>Jardim Beatriz</item>
+        <item>Jardim Belvedere</item>
+        <item>Jardim Cardinalli</item>
+        <item>Jardim Castelo Branco</item>
+        <item>Jardim Centenário</item>
+        <item>Jardim Cruzeiro do Sul</item>
+        <item>Jardim das Torres</item>
+        <item>Jardim de Cresci</item>
+        <item>Jardim Dona Francisca</item>
+        <item>Jardim Dona Francisca</item>
+        <item>Jardim Gibertoni</item>
+        <item>Jardim Gonzaga</item>
+        <item>Jardim Guanabara</item>
+        <item>Jardim Ipanema</item>
+        <item>Jardim Jockey Clube</item>
+        <item>Jardim Lutfalla</item>
+        <item>Jardim Macarengo</item>
+        <item>Jardim Maracanã</item>
+        <item>Jardim Maria Stella Fagá</item>
+        <item>Jardim Medeiros</item>
+        <item>Jardim Mercedes</item>
+        <item>Jardim Mirna</item>
+        <item>Jardim Munique I e II</item>
+        <item>Jardim Nossa Senhora Aparecida I e II</item>
+        <item>Jardim Nova São Carlos</item>
+        <item>Jardim Nova São Carlos</item>
+        <item>Jardim Novo Horizonte</item>
+        <item>Jardim Pacaembu</item>
+        <item>Jardim Paraíso</item>
+        <item>Jardim Paulista</item>
+        <item>Jardim Paulista</item>
+        <item>Jardim Paulistano</item>
+        <item>Jardim Planalto</item>
+        <item>Jardim Planalto</item>
+        <item>Jardim Real</item>
+        <item>Jardim Ricetti</item>
+        <item>Jardim Santa Helena</item>
+        <item>Jardim Santa Tereza</item>
+        <item>Jardim São Carlos</item>
+        <item>Jardim São João Batista</item>
+        <item>Jardim São João Batista</item>
+        <item>Jardim São Paulo</item>
+        <item>Jardim São Rafael</item>
+        <item>Jardim Sempre Vale</item>
+        <item>Jardim Tangará</item>
+        <item>Jardim Tijuca</item>
+        <item>Jardim Tijuco Preto</item>
+        <item>Kartódromo</item>
+        <item>Loteamento Social Santa Angelina</item>
+        <item>Maria Stela Fagá</item>
+        <item>Monte Carlo</item>
+        <item>Morada dos Deuses</item>
+        <item>Moradas São Carlos 1</item>
+        <item>Moradas São Carlos 2</item>
+        <item>Moradas São Carlos 3</item>
+        <item>Moradas São Carlos I, II e III</item>
+        <item>Nossa Senhora de Fátima</item>
+        <item>Nova Estância (próximo ao corpo de bombeiros)</item>
+        <item>Nucleo Res. Dr. Silvio Villari (Lagoa Serena)</item>
+        <item>Parque Anhembi</item>
+        <item>Parque Belvedere</item>
+        <item>Parque Delta</item>
+        <item>Parque dos Coqueiros</item>
+        <item>Parque dos Timburis</item>
+        <item>Parque Douradinho</item>
+        <item>Parque Eldorado</item>
+        <item>Parque Faber I, II e III</item>
+        <item>Parque Fehr Parque Fehr Associação de Moradores</item>
+        <item>Parque Iguatemi</item>
+        <item>Parque Industrial Miguel Abdelnur</item>
+        <item>Parque Itaipú</item>
+        <item>Parque Itamarati</item>
+        <item>Parque Montreal</item>
+        <item>Parque Nova Estância</item>
+        <item>Parque Primavera</item>
+        <item>Parque Quebec</item>
+        <item>Parque Sabará</item>
+        <item>Parque Santa Felícia</item>
+        <item>Parque Santa Felícia (Res. Roma)</item>
+        <item>Parque Santa Monica</item>
+        <item>Parque Santa Paula</item>
+        <item>Parque São Carlos</item>
+        <item>Parque São Jorge</item>
+        <item>Parque São Miguel (eventos Damha)</item>
+        <item>Parque Sisi</item>
+        <item>Parque Vale do Uirapuru</item>
+        <item>Parque Vila Verde Sabará</item>
+        <item>Porta do Sol</item>
+        <item>Quinta dos Buritis</item>
+        <item>Recreio Campestre (próximo ao posto castelo)</item>
+        <item>Recreio dos Bandeirantes</item>
+        <item>Redenção</item>
+        <item>Res. Américo Alves Margarido</item>
+        <item>Res. Ana Carolina</item>
+        <item>Res. Astolpho Luiz do Prado</item>
+        <item>Residencial Damha Golf I</item>
+        <item>Residencial Damha I, II, III e IV</item>
+        <item>Residencial Mons. Romeu Tortorelli</item>
+        <item>Residencial Montreal</item>
+        <item>Residencial Parati</item>
+        <item>Residencial Portal do Vale</item>
+        <item>Residencial Village I, II, III e IV</item>
+        <item>Samambaia Residencial</item>
+        <item>Santa Julia</item>
+        <item>Terra Nova São Carlos</item>
+        <item>Terra Nova São Carlos</item>
+        <item>Tibaia de São Fernando I e II</item>
+        <item>Tutoya do Vale</item>
+        <item>Vale da Santa Felicidade</item>
+        <item>Vila Alpes</item>
+        <item>Vila Arnaldo</item>
+        <item>Vila Bela Vista</item>
+        <item>Vila Boa Vista I e II</item>
+        <item>Vila Caetano</item>
+        <item>Vila Cardeal (hoje dentro da Vila Lutfalla)</item>
+        <item>Vila Carmem</item>
+        <item>Vila Conceição</item>
+        <item>Vila Costa do Sol</item>
+        <item>Vila Costa do Sol</item>
+        <item>Vila Deriggi</item>
+        <item>Vila Elizabeth</item>
+        <item>Vila Faria</item>
+        <item>Vila Irene</item>
+        <item>Vila Isabel</item>
+        <item>Vila Jacobucci</item>
+        <item>Vila Jacobucci I, II e III</item>
+        <item>Vila Laura</item>
+        <item>Vila Lutfalla</item>
+        <item>Vila Marcelino</item>
+        <item>Vila Marina</item>
+        <item>Vila Max</item>
+        <item>Vila Max</item>
+        <item>Vila Monteiro</item>
+        <item>Vila Nery</item>
+        <item>Vila Palmares</item>
+        <item>Vila Parque Industrial</item>
+        <item>Vila Pelicano</item>
+        <item>Vila Prado</item>
+        <item>Vila Pureza</item>
+        <item>Vila Rancho Velho</item>
+        <item>Vila Rica</item>
+        <item>Vila Santa Maria I, II e III</item>
+        <item>Vila Santo Antonio</item>
+        <item>Vila Santo Antonio</item>
+        <item>Vila São Gabriel</item>
+        <item>Vila São José</item>
+        <item>Vila São José</item>
+        <item>Vila Sônia</item>
+        <item>Vista Alegre</item>
+    </string-array>
+
     <string name="title_activity_registration_verification">Já possui cadastro?</string>
 
     <string name="title_activity_news">Escrever noticia</string>
 
     <string name="title_activity_intent_donation">Finalize seu cadastro</string>
-    <string name="title_activity_ranking_donations">RankingDonationsActivity</string>
-    <string name="title_activity_success">SuccessActivity</string>
+    <string name="title_activity_ranking_donations">Ranking de doações</string>
+    <string name="title_activity_success">Parabéns!</string>
 </resources>
