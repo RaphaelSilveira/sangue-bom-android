@@ -40,7 +40,7 @@ public class IntentDonationProvider {
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.d("Response", response.toString());
-                    intentDonationCallback.create();
+                    intentDonationCallback.success();
                 }
             },
             new Response.ErrorListener()
@@ -54,5 +54,33 @@ public class IntentDonationProvider {
 
         request.add(getRequest);
     }
+    public void update (IntentDonation intentDonation, Context context, final IntentDonationCallback intentDonationCallback) throws JSONException {
+        RequestQueue request = Volley.newRequestQueue(context);
+
+        Gson gson = new Gson();
+        String intentDonationJson = gson.toJson(intentDonation);
+        JSONObject intentDonationObject = new JSONObject(intentDonationJson);
+
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.POST, Endpoints.INTENT_DONATION_UPDATE_DONATOR, intentDonationObject,
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("Response", response.toString());
+                        intentDonationCallback.success();
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Error.Response", error.toString());
+                    }
+                }
+        );
+
+        request.add(getRequest);
+    }
+
 
 }

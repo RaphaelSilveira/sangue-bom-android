@@ -214,12 +214,35 @@ public class IntentDonationActivity extends AppCompatActivity {
     }
 
     private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
+        if (alreadyExist) {
+            updateNewBloodDonator(intentDonation);
+        } else {
+            createNewBloodDonator(intentDonation);
+        }
+    }
+
+    private void updateNewBloodDonator (IntentDonation intentDonation) throws JSONException {
+        final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Finalizando a sua intenção...", true);
+        progressDialog.setCancelable(true);
+
+        IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
+            @Override
+            public void success() {
+                progressDialog.dismiss();
+                openSuccess();
+            }
+        };
+
+        intentDonationProvider.update(intentDonation, this, intentDonationCallback);
+    }
+
+    private void createNewBloodDonator (IntentDonation intentDonation) throws JSONException {
         final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "Finalizando o seu cadastro...", true);
         progressDialog.setCancelable(true);
 
         IntentDonationCallback intentDonationCallback = new IntentDonationCallback() {
             @Override
-            public void create() {
+            public void success() {
                 progressDialog.dismiss();
                 openSuccess();
             }
