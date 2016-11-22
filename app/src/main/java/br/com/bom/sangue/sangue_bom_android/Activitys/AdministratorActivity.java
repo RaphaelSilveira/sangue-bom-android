@@ -82,8 +82,6 @@ public class AdministratorActivity extends AppCompatActivity
 
         if (id == R.id.intent_donations) {
             // Handle the camera action
-        } else if (id == R.id.intent_maps) {
-
         } else if (id == R.id.write_news) {
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);

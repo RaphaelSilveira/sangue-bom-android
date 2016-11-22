@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -35,7 +36,10 @@ import br.com.bom.sangue.sangue_bom_android.Providers.IntentDonationProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 public class IntentDonationActivity extends AppCompatActivity {
+
     IntentDonationProvider intentDonationProvider = new IntentDonationProvider();
+
+    Boolean alreadyExist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +89,12 @@ public class IntentDonationActivity extends AppCompatActivity {
         BloodDonator bloodDonator = gson.fromJson(bloodDonatoJson, BloodDonator.class);
 
         if (bloodDonator.getId() != null) {
+            alreadyExist = true;
+
+
             Log.i("VERIFICAÇÃO", "Ja possui cadastro");
+
+
         }
 
         cpfFiel.setMaskedText(cpf);
@@ -152,6 +161,56 @@ public class IntentDonationActivity extends AppCompatActivity {
         intentDonation.setCreatedAt(simpleDateFormatIntent.format(dateIntent));
 
         createIntentDonation(intentDonation);
+    }
+
+    private void populateFields (BloodDonator bloodDonator) {
+        EditText nicknameField = (EditText) findViewById(R.id.input_nickname);
+        nicknameField.setText(bloodDonator.getNickname());
+
+        populateSpinner(R.array.blood_types, R.id.input_blood_type, bloodDonator.getBloodType());
+
+        populateSpinner(R.array.blood_factor, R.id.input_layout_blood_factor, bloodDonator.getBloodFactor());
+
+        EditText nameField = (EditText) findViewById(R.id.input_name);
+        nameField.setText(bloodDonator.getName());
+
+        EditText emailField = (EditText) findViewById(R.id.input_email);
+        emailField.setText(bloodDonator.getEmail());
+
+        String birthDate = new SimpleDateFormat("dd-MM-yyyy").format(bloodDonator.getBirthDate());
+        birthDate = birthDate.replace("-", "");
+        MaskedEditText birthDateField = (MaskedEditText) findViewById(R.id.input_birth_date);
+        birthDateField.setMaskedText(birthDate);
+
+        String telephone = bloodDonator.getTelephone().getDdd() + bloodDonator.getTelephone().getNumber();
+        MaskedEditText telephoneField = (MaskedEditText) findViewById(R.id.input_telephone);
+        telephoneField.setMaskedText(telephone);
+
+        EditText streetField = (EditText) findViewById(R.id.input_street);
+        streetField.setText(bloodDonator.getAddress().getStreet());
+
+        EditText numberField = (EditText) findViewById(R.id.input_number);
+        numberField.setText(bloodDonator.getAddress().getNumber());
+
+        populateSpinner(R.array.neighborhoods, R.id.input_neighborhood, bloodDonator.getAddress().getNeighborhood());
+
+        MaskedEditText cepField = (MaskedEditText) findViewById(R.id.input_cep);
+        cepField.setMaskedText(bloodDonator.getAddress().getCep());
+
+        EditText complementField = (EditText) findViewById(R.id.input_complement);
+        complementField.setText(bloodDonator.getAddress().getComplement());
+    }
+
+    private void populateSpinner (int array, int id, String compare) {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner spinner = (Spinner) findViewById(id);
+
+        spinner.setAdapter(adapter);
+
+        int bloodTypeSpinnerPosition = adapter.getPosition(compare);
+        spinner.setSelection(bloodTypeSpinnerPosition);
     }
 
     private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
