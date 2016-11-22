@@ -1,6 +1,10 @@
 package br.com.bom.sangue.sangue_bom_android.Activitys;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -80,12 +84,38 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private void createNews (News news) throws ParseException, JSONException {
+        final ProgressDialog progressDialog = ProgressDialog.show(this, "Aguarde...", "", true);
+        progressDialog.setCancelable(true);
+
         NewsCallback newsCallback = new NewsCallback() {
             @Override
-            public void create() {
-
+            public void create(Boolean mayComeIn) {
+                progressDialog.dismiss();
+                if (mayComeIn) {
+                    openAdministrator();
+                } else {
+                    badServer();
+                }
             }
         };
         newsProvider.create(news, this, newsCallback);
+    }
+
+    private void openAdministrator () {
+        Intent intent = new Intent(this, AdministratorActivity.class);
+        startActivity(intent);
+    }
+
+    private void badServer () {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Algo errado aconteceu!");
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.cancel();
+            }
+        });
+
+        alert.show();
     }
 }

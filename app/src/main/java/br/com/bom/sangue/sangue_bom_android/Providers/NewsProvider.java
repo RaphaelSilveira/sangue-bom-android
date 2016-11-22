@@ -32,6 +32,8 @@ public class NewsProvider {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("Response", response.toString());
+
+                        newsCallback.create(Boolean.valueOf(response.toString()));
                     }
                 },
                 new Response.ErrorListener()
