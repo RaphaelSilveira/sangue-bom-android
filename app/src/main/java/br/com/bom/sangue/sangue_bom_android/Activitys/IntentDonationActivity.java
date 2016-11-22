@@ -41,6 +41,10 @@ public class IntentDonationActivity extends AppCompatActivity {
 
     Boolean alreadyExist = false;
 
+    Long bloodDonatorId;
+    Long telephoneId;
+    Long addressId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,10 +95,11 @@ public class IntentDonationActivity extends AppCompatActivity {
         if (bloodDonator.getId() != null) {
             alreadyExist = true;
 
+            bloodDonatorId = bloodDonator.getId();
+            telephoneId = bloodDonator.getTelephone().getId();
+            addressId = bloodDonator.getAddress().getId();
 
-            Log.i("VERIFICAÇÃO", "Ja possui cadastro");
-
-
+            populateFields(bloodDonator);
         }
 
         cpfFiel.setMaskedText(cpf);
@@ -134,7 +139,7 @@ public class IntentDonationActivity extends AppCompatActivity {
         bloodDonator.setBirthDate(simpleDateFormat.format(date));
 
         String phone = telephoneField.getUnmaskedText().toString();
-        String dd = phone.substring(0, 1);
+        String dd = phone.substring(0, 2);
         String finalNumber = phone.substring(2);
         telephone.setDdi(55);
         telephone.setDdd(Integer.parseInt(dd));
@@ -169,7 +174,7 @@ public class IntentDonationActivity extends AppCompatActivity {
 
         populateSpinner(R.array.blood_types, R.id.input_blood_type, bloodDonator.getBloodType());
 
-        populateSpinner(R.array.blood_factor, R.id.input_layout_blood_factor, bloodDonator.getBloodFactor());
+        populateSpinner(R.array.blood_factor, R.id.input_blood_factor, bloodDonator.getBloodFactor());
 
         EditText nameField = (EditText) findViewById(R.id.input_name);
         nameField.setText(bloodDonator.getName());
@@ -177,12 +182,14 @@ public class IntentDonationActivity extends AppCompatActivity {
         EditText emailField = (EditText) findViewById(R.id.input_email);
         emailField.setText(bloodDonator.getEmail());
 
-        String birthDate = new SimpleDateFormat("dd-MM-yyyy").format(bloodDonator.getBirthDate());
-        birthDate = birthDate.replace("-", "");
+        String array[] = new String[3];
+        array = bloodDonator.getBirthDate().split("-");
+        String birthDate = array[2] + array[1] + array[0];
         MaskedEditText birthDateField = (MaskedEditText) findViewById(R.id.input_birth_date);
         birthDateField.setMaskedText(birthDate);
 
-        String telephone = bloodDonator.getTelephone().getDdd() + bloodDonator.getTelephone().getNumber();
+        String telephone = Integer.toString(bloodDonator.getTelephone().getDdd()) + bloodDonator.getTelephone().getNumber();
+        Log.d("TELEPHONE", telephone);
         MaskedEditText telephoneField = (MaskedEditText) findViewById(R.id.input_telephone);
         telephoneField.setMaskedText(telephone);
 
@@ -190,7 +197,7 @@ public class IntentDonationActivity extends AppCompatActivity {
         streetField.setText(bloodDonator.getAddress().getStreet());
 
         EditText numberField = (EditText) findViewById(R.id.input_number);
-        numberField.setText(bloodDonator.getAddress().getNumber());
+        numberField.setText(Integer.toString(bloodDonator.getAddress().getNumber()));
 
         populateSpinner(R.array.neighborhoods, R.id.input_neighborhood, bloodDonator.getAddress().getNeighborhood());
 
@@ -215,6 +222,10 @@ public class IntentDonationActivity extends AppCompatActivity {
 
     private void createIntentDonation (IntentDonation intentDonation) throws JSONException {
         if (alreadyExist) {
+            intentDonation.getBloodDonator().setId(bloodDonatorId);
+            intentDonation.getBloodDonator().getTelephone().setId(telephoneId);
+            intentDonation.getBloodDonator().getAddress().setId(addressId);
+
             updateNewBloodDonator(intentDonation);
         } else {
             createNewBloodDonator(intentDonation);
