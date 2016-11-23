@@ -7,11 +7,13 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -86,11 +88,11 @@ public class IntentDonationProvider {
     public void findAll (Context context, final ActiveIntentDonationsCallback activeIntentDonationsCallback) throws JSONException {
         RequestQueue request = Volley.newRequestQueue(context);
 
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL, null,
-                new Response.Listener<JSONObject>()
+        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL, null,
+                new Response.Listener<JSONArray>()
                 {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         Log.d("Response", response.toString());
                         activeIntentDonationsCallback.findAllIntentDonations(response.toString());
                     }

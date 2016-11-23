@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.google.gson.Gson;
@@ -52,6 +53,8 @@ public class ActiveIntentDonationsActivity extends AppCompatActivity {
             public void findAllIntentDonations(String json) {
                 Gson gson = new Gson();
                 List<IntentDonation> intentDonations = gson.fromJson(json, new TypeToken<List<IntentDonation>>(){}.getType());
+
+                Log.d("INTENT DONATIONS", "" + intentDonations.size());
 
                 loadingList(intentDonations);
             }
