@@ -49,6 +49,13 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
         Telephone telephone = intentDonation.getBloodDonator().getTelephone();
         String formatedTelephone = "(" + telephone.getDdd() + ") " + telephone.getNumber();
         holder.telephone.setText(formatedTelephone);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                                
+            }
+        });
     }
 
     @Override
