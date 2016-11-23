@@ -33,7 +33,7 @@ public class NewsProvider {
                     public void onResponse(JSONObject response) {
                         Log.d("Response", response.toString());
 
-                        newsCallback.create(Boolean.valueOf(response.toString()));
+                        newsCallback.create(Boolean.TRUE);
                     }
                 },
                 new Response.ErrorListener()

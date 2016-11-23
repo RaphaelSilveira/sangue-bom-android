@@ -67,7 +67,7 @@ public class NewsActivity extends AppCompatActivity {
     private void mountObject () throws ParseException, JSONException {
         Administrator administrator = new Administrator();
         News news = new News();
-        long id = 2; // mocked data
+        long id = 1; // mocked data
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         EditText title = (EditText) findViewById(R.id.input_titulo);
@@ -102,7 +102,7 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private void openAdministrator () {
-        Intent intent = new Intent(this, AdministratorActivity.class);
+        Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
     }
 
