@@ -1,17 +1,21 @@
 package br.com.bom.sangue.sangue_bom_android.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.w3c.dom.Text;
 
 import java.util.List;
 import java.util.StringTokenizer;
 
+import br.com.bom.sangue.sangue_bom_android.Activitys.DetailsIntentDonationActivity;
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.Telephone;
 import br.com.bom.sangue.sangue_bom_android.R;
@@ -37,9 +41,9 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
 
     @Override
     public void onBindViewHolder(ActiveintentDonationsViewHolder holder, int position) {
-        IntentDonation intentDonation = intentDonations.get(position);
+        final IntentDonation intentDonation = intentDonations.get(position);
 
-        holder.bloodDonator.setText(intentDonation.getBloodDonator().getName());
+        holder.bloodDonator.setText(intentDonation.getBloodDonator().getNickname());
 
         String bloodType = intentDonation.getBloodDonator().getBloodType() + intentDonation.getBloodDonator().getBloodFactor();
         holder.bloodType.setText(bloodType);
@@ -53,7 +57,7 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                                
+                openDetails(intentDonation);
             }
         });
     }
@@ -77,6 +81,17 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
             neighborhood = (TextView) view.findViewById(R.id.neighborhood_active);
             telephone = (TextView) view.findViewById(R.id.telephone_active);
         }
+    }
+
+    private void openDetails (IntentDonation intentDonation) {
+        Intent intent = new Intent(context, DetailsIntentDonationActivity.class);
+
+        Gson gson = new Gson();
+        String intentDonationJson = gson.toJson(intentDonation);
+
+        intent.putExtra("EXTRA_INTENT_DONATION", intentDonationJson);
+
+        context.startActivity(intent);
     }
 }
 
