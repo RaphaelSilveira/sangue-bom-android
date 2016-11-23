@@ -255,4 +255,5 @@
     <string name="title_activity_success">Parabéns!</string>
     <string name="title_activity_login">Entrar</string>
     <string name="title_activity_active_intent_donations">Intenções de doação</string>
+    <string name="title_activity_details_intent_donation">DetailsIntentDonationActivity</string>
 </resources>

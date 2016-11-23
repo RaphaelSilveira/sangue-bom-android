@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_details_intent_donation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="br.com.bom.sangue.sangue_bom_android.Activitys.DetailsIntentDonationActivity"
+    tools:showIn="@layout/activity_details_intent_donation">
+
+    <TextView
+        android:id="@+id/name_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Raphael Silveira"/>
+
+    <TextView
+        android:id="@+id/blood_type_detail"
+        android:layout_below="@id/name_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="A+"/>
+
+    <TextView
+        android:id="@+id/nickname_age_detail"
+        android:layout_below="@id/blood_type_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Nickname"/>
+
+    <TextView
+        android:id="@+id/address_detail"
+        android:layout_below="@id/nickname_age_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Rua Maristela T. Custódio, 1258, CIdade Aracy I."/>
+
+    <TextView
+        android:id="@+id/telephone_detail"
+        android:layout_below="@id/address_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="(xx) xxxx-xxxx"/>
+
+    <TextView
+        android:id="@+id/email_detail"
+        android:layout_below="@id/telephone_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="raphajts@gmail.com"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/confirm_donation"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/email_detail"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Efetivar doação"
+        android:background="@drawable/roundcorner"
+        android:textColor="@color/textButton" />
+
+</RelativeLayout>
