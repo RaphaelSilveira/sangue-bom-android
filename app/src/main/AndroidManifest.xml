@@ -101,7 +101,7 @@
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
         </activity>
 
-        <activity android:name=".Activitys.NewsListActivity"></activity>
+        <activity android:name=".Activitys.ActiveNewsListActivity"></activity>
 
     </application>
 
