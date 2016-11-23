@@ -20,5 +20,5 @@ public final class Endpoints {
 
     public static final String LOGIN = ENDPOINT + "/administrator/login/";
 
-    public static final String NEWS_LIST = ENDPOINT + "/news/list-all";
+    public static final String NEWS_FIND_ALL = ENDPOINT + "/news/list-all";
 }
