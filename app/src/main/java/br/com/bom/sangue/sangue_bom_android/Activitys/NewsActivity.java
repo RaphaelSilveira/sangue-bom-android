@@ -102,7 +102,7 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private void openAdministrator () {
-        Intent intent = new Intent(this, AdministratorActivity.class);
+        Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
     }
 
