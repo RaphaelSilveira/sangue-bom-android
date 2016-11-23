@@ -26,6 +26,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.News;
 import br.com.bom.sangue.sangue_bom_android.R;
 
@@ -81,7 +82,8 @@ public class AdministratorActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.intent_donations) {
-            // Handle the camera action
+            Intent intent = new Intent(this, ActiveIntentDonationsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.write_news) {
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);

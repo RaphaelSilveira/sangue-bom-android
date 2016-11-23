@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.bom.sangue.sangue_bom_android.Callbacks.ActiveIntentDonationsCallback;
 import br.com.bom.sangue.sangue_bom_android.Callbacks.IntentDonationCallback;
 import br.com.bom.sangue.sangue_bom_android.Constants.Endpoints;
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
@@ -82,5 +83,28 @@ public class IntentDonationProvider {
         request.add(getRequest);
     }
 
+    public void findAll (Context context, final ActiveIntentDonationsCallback activeIntentDonationsCallback) throws JSONException {
+        RequestQueue request = Volley.newRequestQueue(context);
+
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL, null,
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("Response", response.toString());
+                        activeIntentDonationsCallback.findAllIntentDonations(response.toString());
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Error.Response", error.toString());
+                    }
+                }
+        );
+
+        request.add(getRequest);
+    }
 
 }
