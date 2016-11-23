@@ -7,9 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
+import java.util.StringTokenizer;
 
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
+import br.com.bom.sangue.sangue_bom_android.Entities.Telephone;
 import br.com.bom.sangue.sangue_bom_android.R;
 
 /**
@@ -36,6 +40,15 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
         IntentDonation intentDonation = intentDonations.get(position);
 
         holder.bloodDonator.setText(intentDonation.getBloodDonator().getName());
+
+        String bloodType = intentDonation.getBloodDonator().getBloodType() + intentDonation.getBloodDonator().getBloodFactor();
+        holder.bloodType.setText(bloodType);
+
+        holder.neighborhood.setText(intentDonation.getBloodDonator().getAddress().getNeighborhood());
+
+        Telephone telephone = intentDonation.getBloodDonator().getTelephone();
+        String formatedTelephone = "(" + telephone.getDdd() + ") " + telephone.getNumber();
+        holder.telephone.setText(formatedTelephone);
     }
 
     @Override
@@ -45,11 +58,17 @@ public class ActiveIntentDonationsAdapter extends RecyclerView.Adapter<ActiveInt
 
     public static class ActiveintentDonationsViewHolder extends RecyclerView.ViewHolder {
         public TextView bloodDonator;
+        public TextView bloodType;
+        public TextView neighborhood;
+        public TextView telephone;
 
         public ActiveintentDonationsViewHolder(View view) {
             super(view);
 
             bloodDonator = (TextView) view.findViewById(R.id.blood_donator_active);
+            bloodType =  (TextView) view.findViewById(R.id.blood_type_active);
+            neighborhood = (TextView) view.findViewById(R.id.neighborhood_active);
+            telephone = (TextView) view.findViewById(R.id.telephone_active);
         }
     }
 }
