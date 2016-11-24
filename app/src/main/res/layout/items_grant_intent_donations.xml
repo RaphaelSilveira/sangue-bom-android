@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/blood_donator_grant"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:text="Nome do cidadão"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/blood_type_grant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A+"
+        android:layout_toRightOf="@id/blood_donator_grant"/>
+
+    <TextView
+        android:id="@+id/neighborhood_grant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bairro"
+        android:layout_below="@id/blood_donator_grant"/>
+
+    <TextView
+        android:id="@+id/telephone_grant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(xx) xxxx-xxxx"
+        android:layout_toRightOf="@id/blood_donator_grant"
+        android:layout_below="@id/blood_donator_grant"/>
+
+    <View
+        android:layout_below="@id/telephone_grant"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="#D3D3D3"/>
+
+</RelativeLayout>
