@@ -16,24 +16,24 @@ import br.com.bom.sangue.sangue_bom_android.R;
  * Created by paulo on 23/11/16.
  */
 
-public class ActiveNewsListAdapter extends RecyclerView.Adapter<ActiveNewsListAdapter.ActiveNewsListViewHolder> {
+public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsListViewHolder> {
 
     private List<News> newsList;
     private Context context;
 
-    public ActiveNewsListAdapter (List<News> newsList, Context context) {
+    public NewsListAdapter(List<News> newsList, Context context) {
         this.newsList = newsList;
         this.context = context;
     }
 
     @Override
-    public ActiveNewsListAdapter.ActiveNewsListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemActiveNews = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_active_news, parent, false);
-        return new ActiveNewsListAdapter.ActiveNewsListViewHolder(itemActiveNews);
+    public NewsListAdapter.NewsListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemActiveNews = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_news, parent, false);
+        return new NewsListAdapter.NewsListViewHolder(itemActiveNews);
     }
 
     @Override
-    public void onBindViewHolder(ActiveNewsListAdapter.ActiveNewsListViewHolder holder, int position) {
+    public void onBindViewHolder(NewsListAdapter.NewsListViewHolder holder, int position) {
         News news = newsList.get(position);
 
         holder.text.setText(news.getText());
@@ -45,11 +45,11 @@ public class ActiveNewsListAdapter extends RecyclerView.Adapter<ActiveNewsListAd
         return newsList.size();
     }
 
-    public static class ActiveNewsListViewHolder extends RecyclerView.ViewHolder {
+    public static class NewsListViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public TextView text;
 
-        public ActiveNewsListViewHolder(View view) {
+        public NewsListViewHolder(View view) {
             super(view);
 
             title = (TextView) view.findViewById(R.id.news_title);

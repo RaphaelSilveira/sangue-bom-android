@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.bom.sangue.sangue_bom_android.Callbacks.ActiveNewsCallback;
+import br.com.bom.sangue.sangue_bom_android.Callbacks.NewsListCallback;
 import br.com.bom.sangue.sangue_bom_android.Callbacks.NewsCallback;
 import br.com.bom.sangue.sangue_bom_android.Constants.Endpoints;
 import br.com.bom.sangue.sangue_bom_android.Entities.News;
@@ -51,7 +51,7 @@ public class NewsProvider {
         request.add(getRequest);
     }
 
-    public void findAll (Context context, final ActiveNewsCallback activeNewsCallback) throws JSONException {
+    public void findAll (Context context, final NewsListCallback newsListCallback) throws JSONException {
         RequestQueue request = Volley.newRequestQueue(context);
 
         JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.NEWS_FIND_ALL, null,
@@ -60,7 +60,7 @@ public class NewsProvider {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d("Response", response.toString());
-                        activeNewsCallback.findAllNews(response.toString());
+                        newsListCallback.findAllNews(response.toString());
                     }
                 },
                 new Response.ErrorListener()

@@ -13,26 +13,24 @@ import org.json.JSONException;
 
 import java.util.List;
 
-import br.com.bom.sangue.sangue_bom_android.Adapters.ActiveIntentDonationsAdapter;
-import br.com.bom.sangue.sangue_bom_android.Adapters.ActiveNewsListAdapter;
-import br.com.bom.sangue.sangue_bom_android.Callbacks.ActiveNewsCallback;
-import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
+import br.com.bom.sangue.sangue_bom_android.Adapters.NewsListAdapter;
+import br.com.bom.sangue.sangue_bom_android.Callbacks.NewsListCallback;
 import br.com.bom.sangue.sangue_bom_android.Entities.News;
 import br.com.bom.sangue.sangue_bom_android.Providers.NewsProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
 
-public class ActiveNewsListActivity extends AppCompatActivity {
+public class NewsListActivity extends AppCompatActivity {
 
     NewsProvider newsProvider = new NewsProvider();
 
     private RecyclerView recyclerView;
 
-    private ActiveNewsListAdapter activeNewsListAdapter;
+    private NewsListAdapter newsListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_active_news_list);
+        setContentView(R.layout.activity_news_list);
         try {
             findAllNews();
         } catch (JSONException e) {
@@ -41,7 +39,7 @@ public class ActiveNewsListActivity extends AppCompatActivity {
     }
 
     private void findAllNews () throws JSONException{
-        ActiveNewsCallback activeNewsCallback = new ActiveNewsCallback() {
+        NewsListCallback newsListCallback = new NewsListCallback() {
             @Override
             public void findAllNews(String json) {
                 Gson gson = new Gson();
@@ -53,7 +51,7 @@ public class ActiveNewsListActivity extends AppCompatActivity {
             }
         };
 
-        newsProvider.findAll(this, activeNewsCallback);
+        newsProvider.findAll(this, newsListCallback);
     }
 
     private void loadingList (List<News> newsList) {
@@ -62,8 +60,8 @@ public class ActiveNewsListActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        activeNewsListAdapter = new ActiveNewsListAdapter(newsList, this);
-        recyclerView.setAdapter(activeNewsListAdapter);
-        activeNewsListAdapter.notifyDataSetChanged();
+        newsListAdapter = new NewsListAdapter(newsList, this);
+        recyclerView.setAdapter(newsListAdapter);
+        newsListAdapter.notifyDataSetChanged();
     }
 }
