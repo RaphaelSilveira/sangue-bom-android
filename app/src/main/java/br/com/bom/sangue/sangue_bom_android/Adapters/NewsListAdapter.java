@@ -1,14 +1,20 @@
 package br.com.bom.sangue.sangue_bom_android.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
+import br.com.bom.sangue.sangue_bom_android.Activitys.DetailsIntentDonationActivity;
+import br.com.bom.sangue.sangue_bom_android.Activitys.DetailsNewsActivity;
+import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.News;
 import br.com.bom.sangue.sangue_bom_android.R;
 
@@ -34,10 +40,16 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsLi
 
     @Override
     public void onBindViewHolder(NewsListAdapter.NewsListViewHolder holder, int position) {
-        News news = newsList.get(position);
+        final News news = newsList.get(position);
 
-        holder.text.setText(news.getText());
         holder.title.setText(news.getTitle());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDetails(news);
+            }
+        });
     }
 
     @Override
@@ -47,14 +59,23 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsLi
 
     public static class NewsListViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
-        public TextView text;
 
         public NewsListViewHolder(View view) {
             super(view);
 
             title = (TextView) view.findViewById(R.id.news_title);
-            text = (TextView) view.findViewById(R.id.news_text);
         }
+    }
+
+    private void openDetails (News news) {
+        Intent intent = new Intent(context, DetailsNewsActivity.class);
+
+        Gson gson = new Gson();
+        String newsJson = gson.toJson(news);
+
+        intent.putExtra("EXTRA_NEWS", newsJson);
+
+        context.startActivity(intent);
     }
 
 }
