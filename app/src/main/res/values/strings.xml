@@ -256,4 +256,5 @@
     <string name="title_activity_login">Entrar</string>
     <string name="title_activity_active_intent_donations">Intenções de doação</string>
     <string name="title_activity_details_intent_donation">DetailsIntentDonationActivity</string>
+    <string name="title_activity_grant_intent_donation">GrantIntentDonationActivity</string>
 </resources>
