@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.bom.sangue.sangue_bom_android.Callbacks.ActiveIntentDonationsCallback;
+import br.com.bom.sangue.sangue_bom_android.Callbacks.GrantIntentDonationsCallback;
 import br.com.bom.sangue.sangue_bom_android.Callbacks.IntentDonationCallback;
 import br.com.bom.sangue.sangue_bom_android.Constants.Endpoints;
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
@@ -90,21 +91,45 @@ public class IntentDonationProvider {
         RequestQueue request = Volley.newRequestQueue(context);
 
         JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL, null,
-                new Response.Listener<JSONArray>()
-                {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        Log.d("Response", response.toString());
-                        activeIntentDonationsCallback.findAllIntentDonations(response.toString());
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("Error.Response", error.toString());
-                    }
+            new Response.Listener<JSONArray>()
+            {
+                @Override
+                public void onResponse(JSONArray response) {
+                    Log.d("Response", response.toString());
+                    activeIntentDonationsCallback.findAllIntentDonations(response.toString());
                 }
+            },
+            new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("Error.Response", error.toString());
+                }
+            }
+        );
+
+        request.add(getRequest);
+    }
+
+    public void findAllGrant (Context context, final GrantIntentDonationsCallback grantIntentDonationsCallback) throws JSONException {
+        RequestQueue request = Volley.newRequestQueue(context);
+
+        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL_GRANT, null,
+            new Response.Listener<JSONArray>()
+            {
+                @Override
+                public void onResponse(JSONArray response) {
+                    Log.d("Response", response.toString());
+                    grantIntentDonationsCallback.findAllIntentDonations(response.toString());
+                }
+            },
+            new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("Error.Response", error.toString());
+                }
+            }
         );
 
         request.add(getRequest);

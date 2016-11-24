@@ -5,8 +5,7 @@ package br.com.bom.sangue.sangue_bom_android.Constants;
  */
 public final class Endpoints {
 
-
-    private static final String ENDPOINT = "http://200.136.196.129:8080";
+    private static final String ENDPOINT = "http://192.168.43.72:8080";
 
     public static final String BLOOD_DONATOR_FIND_ONE_BY_CPF = ENDPOINT + "/blood-donator/find-by-cpf/";
 
@@ -15,6 +14,7 @@ public final class Endpoints {
     public static final String INTENT_DONATION_CREATE_DONATOR = ENDPOINT + "/intent-donation/create-donator";
     public static final String INTENT_DONATION_UPDATE_DONATOR = ENDPOINT + "/intent-donation/update-donator";
     public static final String INTENT_DONATION_FIND_ALL = ENDPOINT + "/intent-donation/find-all";
+    public static final String INTENT_DONATION_FIND_ALL_GRANT = ENDPOINT + "/intent-donation/find-all-grant";
     public static final String INTENT_DONATION_SET_GRANT_DATE = ENDPOINT + "/intent-donation/";
 
     public static final String RANKING_DONATION_GET = ENDPOINT + "/ranking-donations";

@@ -84,6 +84,9 @@ public class AdministratorActivity extends AppCompatActivity
         if (id == R.id.intent_donations) {
             Intent intent = new Intent(this, ActiveIntentDonationsActivity.class);
             startActivity(intent);
+        } else if (id == R.id.grant_intent_donations) {
+            Intent intent = new Intent(this, GrantIntentDonationActivity.class);
+            startActivity(intent);
         } else if (id == R.id.write_news) {
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);

@@ -7,6 +7,10 @@
             android:icon="@drawable/ic_heart"
             android:title="Intenções de doação" />
         <item
+            android:id="@+id/grant_intent_donations"
+            android:icon="@drawable/ic_med_donation"
+            android:title="Doações realizadas" />
+        <item
             android:id="@+id/write_news"
             android:icon="@drawable/ic_write_news"
             android:title="Escrever notícia" />
