@@ -54,7 +54,7 @@ public class NewsProvider {
     public void findAll (Context context, final ActiveNewsCallback activeNewsCallback) throws JSONException {
         RequestQueue request = Volley.newRequestQueue(context);
 
-        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.INTENT_DONATION_FIND_ALL, null,
+        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, Endpoints.NEWS_FIND_ALL, null,
                 new Response.Listener<JSONArray>()
                 {
                     @Override
