@@ -100,7 +100,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
         </activity>
-        <activity android:name=".Activitys.NewsListActivity" />
         <activity
             android:name=".Activitys.DetailsIntentDonationActivity"
             android:label="@string/title_activity_details_intent_donation"
@@ -122,6 +121,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
+        </activity>
+        <activity
+            android:name=".Activitys.NewsListActivity"
+            android:label="@string/title_activity_news_list"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.NewsActivity" />
+        </activity>
+        <activity
+            android:name=".Activitys.DetailsNewsActivity"
+            android:label="@string/title_activity_details_news"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.NewsActivity" />
         </activity>
     </application>
 
