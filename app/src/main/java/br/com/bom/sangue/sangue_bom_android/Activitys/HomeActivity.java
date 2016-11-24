@@ -59,7 +59,8 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.donators_ranking) {
-
+            Intent intent = new Intent(this, RankingDonationsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.news) {
             Intent intent = new Intent(this, NewsListActivity.class);
             startActivity(intent);

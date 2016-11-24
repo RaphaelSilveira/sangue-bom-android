@@ -18,6 +18,7 @@ import java.util.List;
 import br.com.bom.sangue.sangue_bom_android.Adapters.RankingDonationAdapter;
 import br.com.bom.sangue.sangue_bom_android.Callbacks.RankingDonationsCallback;
 import br.com.bom.sangue.sangue_bom_android.Entities.BloodDonator;
+import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.RankingDonations;
 import br.com.bom.sangue.sangue_bom_android.Providers.RankingDonationsProvider;
 import br.com.bom.sangue.sangue_bom_android.R;
@@ -48,8 +49,8 @@ public class RankingDonationsActivity extends AppCompatActivity {
     }
 
     private void transformObject (String object) {
-        Type listType = new TypeToken<List<RankingDonations>>(){}.getType();
-        List<RankingDonations> rankingDonationses = new Gson().fromJson(object, listType);
+        Gson gerson = new Gson();
+        List<RankingDonations> rankingDonationses = gerson.fromJson(object, new TypeToken<List<RankingDonations>>(){}.getType());
 
         loadingList(rankingDonationses);
     }

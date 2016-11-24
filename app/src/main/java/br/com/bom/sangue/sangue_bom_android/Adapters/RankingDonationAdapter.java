@@ -37,7 +37,7 @@ public class RankingDonationAdapter extends RecyclerView.Adapter<RankingDonation
         RankingDonations rankingDonations = rankingDonationses.get(position);
 
         holder.bloodDonator.setText(rankingDonations.getBloodDonator());
-        holder.numberDonations.setText(rankingDonations.getNumberDonations());
+        holder.numberDonations.setText(Integer.toString(rankingDonations.getNumberDonations()       ));
     }
 
     @Override
