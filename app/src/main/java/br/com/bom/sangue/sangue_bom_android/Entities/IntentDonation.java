@@ -11,7 +11,7 @@ public class IntentDonation {
     private String createdAt;
     /* Status: 0 - canceled, 1 - to-do, 2 - done*/
     private int status;
-    private Date grantDate;
+    private String grantDate;
     private BloodDonator bloodDonator;
 
     public Long getId() {
@@ -35,10 +35,10 @@ public class IntentDonation {
         this.status = status;
     }
 
-    public Date getGrantDate() {
+    public String getGrantDate() {
         return grantDate;
     }
-    public void setGrantDate(Date grantDate) {
+    public void setGrantDate(String grantDate) {
         this.grantDate = grantDate;
     }
 
