@@ -1,14 +1,19 @@
 package br.com.bom.sangue.sangue_bom_android.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
+import br.com.bom.sangue.sangue_bom_android.Activitys.DetailsIntentDonationActivity;
+import br.com.bom.sangue.sangue_bom_android.Activitys.GrantDetailsIntentsActivity;
 import br.com.bom.sangue.sangue_bom_android.Entities.IntentDonation;
 import br.com.bom.sangue.sangue_bom_android.Entities.Telephone;
 import br.com.bom.sangue.sangue_bom_android.R;
@@ -78,6 +83,13 @@ public class GrantIntentDonationsAdapter extends  RecyclerView.Adapter<GrantInte
     }
 
     private void openDetails(IntentDonation intentDonation) {
+        Intent intent = new Intent(context, GrantDetailsIntentsActivity.class);
 
+        Gson gson = new Gson();
+        String intentDonationJson = gson.toJson(intentDonation);
+
+        intent.putExtra("EXTRA_INTENT_DONATION", intentDonationJson);
+
+        context.startActivity(intent);
     }
 }
