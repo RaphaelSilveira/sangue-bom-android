@@ -57,6 +57,7 @@ public class IntentDonationProvider {
 
         request.add(getRequest);
     }
+
     public void update (IntentDonation intentDonation, Context context, final IntentDonationCallback intentDonationCallback) throws JSONException {
         RequestQueue request = Volley.newRequestQueue(context);
 
@@ -95,6 +96,34 @@ public class IntentDonationProvider {
                     public void onResponse(JSONArray response) {
                         Log.d("Response", response.toString());
                         activeIntentDonationsCallback.findAllIntentDonations(response.toString());
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Error.Response", error.toString());
+                    }
+                }
+        );
+
+        request.add(getRequest);
+    }
+
+    public void setGrantDate (IntentDonation intentDonation, Context context, final IntentDonationCallback intentDonationCallback) throws JSONException {
+        RequestQueue request = Volley.newRequestQueue(context);
+
+        Gson gson = new Gson();
+        String intentDonationJson = gson.toJson(intentDonation);
+        JSONObject intentDonationObject = new JSONObject(intentDonationJson);
+
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.PUT, Endpoints.INTENT_DONATION_SET_GRANT_DATE + intentDonation.getId(), intentDonationObject,
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("Response", response.toString());
+                        intentDonationCallback.success();
                     }
                 },
                 new Response.ErrorListener()
