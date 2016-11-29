@@ -255,9 +255,9 @@
     <string name="title_activity_success">Parabéns!</string>
     <string name="title_activity_login">Entrar</string>
     <string name="title_activity_active_intent_donations">Intenções de doação</string>
-    <string name="title_activity_details_intent_donation">DetailsIntentDonationActivity</string>
-    <string name="title_activity_grant_intent_donation">GrantIntentDonationActivity</string>
-    <string name="title_activity_grant_details_intents">GrantDetailsIntentsActivity</string>
+    <string name="title_activity_details_intent_donation">Intenção de doação</string>
+    <string name="title_activity_grant_intent_donation">Doações realizadas</string>
+    <string name="title_activity_grant_details_intents">Doação realizada</string>
     <string name="title_activity_news_list">Noticias</string>
     <string name="title_activity_details_news">Noticia</string>
 </resources>

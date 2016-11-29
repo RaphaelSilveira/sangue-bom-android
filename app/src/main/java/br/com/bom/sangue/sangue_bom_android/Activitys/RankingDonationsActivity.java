@@ -3,6 +3,7 @@ package br.com.bom.sangue.sangue_bom_android.Activitys;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,6 +38,9 @@ public class RankingDonationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ranking_donations);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         RankingDonationsCallback rankingDonationsCallback = new RankingDonationsCallback() {
             @Override

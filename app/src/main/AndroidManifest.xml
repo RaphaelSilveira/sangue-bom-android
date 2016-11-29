@@ -21,6 +21,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".Activitys.HomeActivity"
             android:label="@string/app_name"
@@ -32,11 +33,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Activitys.AdministratorActivity"
             android:label="@string/title_activity_administrator"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Activitys.RegistrationVerificationActivity"
             android:label="@string/title_activity_registration_verification"
@@ -46,6 +49,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
         </activity>
+
         <activity
             android:name=".Activitys.NewsActivity"
             android:label="@string/title_activity_news"
@@ -55,6 +59,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
         </activity>
+
         <activity
             android:name=".Activitys.IntentDonationActivity"
             android:label="@string/title_activity_intent_donation"
@@ -64,6 +69,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.RegistrationVerificationActivity" />
         </activity>
+
         <activity
             android:name=".Activitys.RankingDonationsActivity"
             android:label="@string/title_activity_ranking_donations"
@@ -73,10 +79,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
         </activity>
+
         <activity
             android:name=".Activitys.SuccessActivity"
             android:label="@string/title_activity_success"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Activitys.LoginActivity"
             android:label="@string/title_activity_login"
@@ -94,34 +102,43 @@
         <activity
             android:name=".Activitys.ActiveIntentDonationsActivity"
             android:label="@string/title_activity_active_intent_donations"
-            android:parentActivityName=".Activitys.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".Activitys.DetailsIntentDonationActivity"
-            android:label="@string/title_activity_details_intent_donation"
-            android:parentActivityName=".Activitys.ActiveIntentDonationsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.ActiveIntentDonationsActivity" />
-        </activity>
-        <activity
-            android:name=".Activitys.GrantIntentDonationActivity"
-            android:label="@string/title_activity_grant_intent_donation"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activitys.GrantDetailsIntentsActivity"
-            android:label="@string/title_activity_grant_details_intents"
             android:parentActivityName=".Activitys.AdministratorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
         </activity>
+
+        <activity
+            android:name=".Activitys.DetailsIntentDonationActivity"
+            android:label="@string/title_activity_details_intent_donation"
+            android:parentActivityName=".Activitys.ActiveIntentDonationsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data192.168.0.15
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.ActiveIntentDonationsActivity" />
+        </activity>
+
+        <activity
+            android:name=".Activitys.GrantIntentDonationActivity"
+            android:label="@string/title_activity_grant_intent_donation"
+            android:parentActivityName=".Activitys.AdministratorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.AdministratorActivity" />
+        </activity>
+
+        <activity
+            android:name=".Activitys.GrantDetailsIntentsActivity"
+            android:label="@string/title_activity_grant_details_intents"
+            android:parentActivityName=".Activitys.GrantIntentDonationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.bom.sangue.sangue_bom_android.Activitys.GrantIntentDonationActivity" />
+        </activity>
+
         <activity
             android:name=".Activitys.NewsListActivity"
             android:label="@string/title_activity_news_list"
@@ -130,6 +147,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.bom.sangue.sangue_bom_android.Activitys.NewsActivity" />
         </activity>
+
         <activity
             android:name=".Activitys.DetailsNewsActivity"
             android:label="@string/title_activity_details_news"
